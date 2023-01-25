@@ -4,7 +4,7 @@
 ViewModel에서 이벤트 처리법은 LiveData를 사용하는 것을 시작으로 EventFlow를 사용하는 방법까지 나왔다.   
 # **Step.1**
 ### *LiveData + Event*
-![pic](https://miro.medium.com/max/884/0*cDZkky8Xk_lGyo3E.webp)
+![pic](https://miro.medium.com/max/884/0*cDZkky8Xk_lGyo3E.webp)   
 ViewModel에서 Livedata를 사용해서 이벤트를 처리하면 이벤트가 한번만 발생시키는 것이 아니라 observe할때마다 직전의 값이 발생하는 중복의 문제가 있다.   
 1. ListActivity에서 Toast를 띄우라는 event를 날림
 2. DetailActivity로 들어갔다가 다시 돌아옴
@@ -33,7 +33,7 @@ val showToastEvent: SingleLiveData<String>() = _showToastEvent
 # **Step.3**
 ### *SharedFlow*
 
-![pic](https://miro.medium.com/max/1400/0*R07ojNRzVbIngL0g.webp)
+![pic](https://miro.medium.com/max/1400/0*R07ojNRzVbIngL0g.webp)   
 프로젝트 코드를 Clean Architecture 패턴으로 구현하고 모든 layer를 module로 나누어서 관리할 때   
 원칙적으로 ViewModel은 presentation layer에 위치하고 있으므로 특정 플랫폼과의 관계가 없어야 한다.   
 즉, ``` import android.xxx```같은 코드가 없어야 한다.   
