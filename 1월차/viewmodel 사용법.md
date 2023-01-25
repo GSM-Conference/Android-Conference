@@ -31,7 +31,7 @@ private val _showToastEvent = MutableSingleLiveData<String>()
 val showToastEvent: SingleLiveData<String>() = _showToastEvent
 ```
 # **Step.3**
-### *SharedFlow*
+### *SharedFlow + Sealed Class*
 
 ![pic](https://miro.medium.com/max/1400/0*R07ojNRzVbIngL0g.webp)   
 프로젝트 코드를 Clean Architecture 패턴으로 구현하고 모든 layer를 module로 나누어서 관리할 때   
