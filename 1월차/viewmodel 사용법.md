@@ -1,6 +1,6 @@
 **ViewModel에서 이벤트를 처리하는 방법**
 ==================================
-![pic](https://miro.medium.com/max/1400/1*WvRhTqDJOTQUtrlvpMOotw.webp)
+![pic](https://miro.medium.com/max/1400/1*WvRhTqDJOTQUtrlvpMOotw.webp)   
 ViewModel에서 이벤트 처리법은 LiveData를 사용하는 것을 시작으로 EventFlow를 사용하는 방법까지 나왔다.   
 # **Step.1**
 ### *LiveData + Event*
