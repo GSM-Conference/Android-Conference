@@ -31,7 +31,7 @@ private val _showToastEvent = MutableSingleLiveData<String>()
 val showToastEvent: SingleLiveData<String>() = _showToastEvent
 ```
 # **Step.3**
-### *SharedFlow + Sealed Class*
+### *SharedFlow*
 
 ![pic](https://miro.medium.com/max/1400/0*R07ojNRzVbIngL0g.webp)   
 프로젝트 코드를 Clean Architecture 패턴으로 구현하고 모든 layer를 module로 나누어서 관리할 때   
@@ -43,7 +43,7 @@ val showToastEvent: SingleLiveData<String>() = _showToastEvent
 ViewModel은 LiveData(안드로이드 프레임 워크)종속성으로부터 벗어날 수 있게 된다.   
 기존의 SingleLiveData를 SharedFlow로 변경하고 observe대신에 collect하는 코드로 변경해주기만 하면 된다.
 # **Step.4**
-### *SharedFlow*
+### *SharedFlow + Sealed Class*
 처리해야 할 Event가 3개인 경우, 기존에는 각각 3개의 SharedFlow를 만들어줬었다.
 ```kt
 private val _showToastEvent = MutableSharedFlow<String>()
