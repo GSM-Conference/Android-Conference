@@ -1,6 +1,6 @@
 **Interceptor**
 ===========
-Interceptro란 API 통신에서 요청에 monitor, rewrite, retry 할 수 있는 강력한 매커니즘이다.   
+Interceptor란 API 통신에서 요청에 monitor, rewrite, retry 할 수 있는 강력한 매커니즘이다.   
 Interceptor를 통해서 우리는 API통신을 만들 때, 통신 과정을 모니터링 하거나 특별한 작업을 수행할 수 있다. 쉽게 말해서, Interceptor기능은 공항 보안요원이 보안검사하는 과정과 비슷하다.   
 Interceptor는 중앙에서 API호출들을 모니터링 하는 것처럼 다양하게 사용된다.   
 일반적으로 각각의 네트워크 호출에 대해 logger를 달아야 할 필요가 있지만 Interceptor를 이용한다면 하나의 logger를 추가하여 모든 네트워크 호출에 대해 동작하게 할 수 있다.
