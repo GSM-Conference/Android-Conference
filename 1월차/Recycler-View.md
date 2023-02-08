@@ -190,8 +190,9 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?){
         super.onCreate(savedInstanceState)
-        setContentView(binding.root)
         binding = ActivityMainBinding.inflate(layoutInflater)
+
+        setContentView(binding.root)
         Log.d("AAAADAS", "asdsa")
         initRecycler()
     }
