@@ -4,7 +4,7 @@
 ```Kotlin
 interface GitHubService{
     @GET("users/{user}/repos")
-    fun getRepoList(@Path("user") user:String:Call<List<Repo>>
+    fun getRepoList(@Path("user") user:String):Call<List<Repo>>
 }
 ```
 
