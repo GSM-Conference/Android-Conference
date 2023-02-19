@@ -7,6 +7,7 @@
 ### 2월달
 #### 1주차: [retrofit](https://github.com/Chanwoo-GithubProject/Android-Conference/blob/main/2%EC%9B%94%EC%B0%A8/retrofit.md), [interceptor](https://github.com/Chanwoo-GithubProject/Android-Conference/blob/main/2%EC%9B%94%EC%B0%A8/interceptor.md)
 #### 2주차: [retrofit 통신](https://github.com/GSM-Conference/Android-Conference/blob/main/2%EC%9B%94%EC%B0%A8/retrofit%20%ED%86%B5%EC%8B%A0.md), [socket 통신](https://github.com/GSM-Conference/Android-Conference/blob/main/2%EC%9B%94%EC%B0%A8/socket%20%ED%86%B5%EC%8B%A0.md)
+#### 3주차: [mvvm](https://github.com/GSM-Conference/Android-Conference/blob/main/2%EC%9B%94%EC%B0%A8/mvvm.md), [mvi](https://github.com/GSM-Conference/Android-Conference/blob/main/2%EC%9B%94%EC%B0%A8/mvi.md)
 ### 1월달
 #### 1주차: [build.gradle파일 및 DSL](https://github.com/Chanwoo-GithubProject/Android-Conference/blob/main/1%EC%9B%94%EC%B0%A8/build.gradle%ED%8C%8C%EC%9D%BC%20%EB%B0%8F%20DSL.md)
 #### 2주차: [viewmodel 사용법](https://github.com/Chanwoo-GithubProject/Android-Conference/blob/main/1%EC%9B%94%EC%B0%A8/viewmodel%20%EC%82%AC%EC%9A%A9%EB%B2%95.md)
