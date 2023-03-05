@@ -6,6 +6,7 @@
 
 ### 3월달
 #### 1주차: [sealed class, enum class](https://github.com/GSM-Conference/Android-Conference/blob/main/3%EC%9B%94%EC%B0%A8/sealed%20class%2C%20enum%20class.md), [컬렉션 함수, 확장 함수](https://github.com/GSM-Conference/Android-Conference/blob/main/3%EC%9B%94%EC%B0%A8/%EC%BB%AC%EB%A0%89%EC%85%98%20%ED%95%A8%EC%88%98%2C%20%ED%99%95%EC%9E%A5%20%ED%95%A8%EC%88%98.md)
+#### 2주차: [위젯](https://github.com/GSM-Conference/Android-Conference/blob/main/3%EC%9B%94%EC%B0%A8/%EC%9C%84%EC%A0%AF.md), [diffUtil](https://github.com/GSM-Conference/Android-Conference/blob/main/3%EC%9B%94%EC%B0%A8/diffUtil.md)
 ### 2월달
 #### 1주차: [retrofit](https://github.com/Chanwoo-GithubProject/Android-Conference/blob/main/2%EC%9B%94%EC%B0%A8/retrofit.md), [interceptor](https://github.com/Chanwoo-GithubProject/Android-Conference/blob/main/2%EC%9B%94%EC%B0%A8/interceptor.md)
 #### 2주차: [retrofit 통신](https://github.com/GSM-Conference/Android-Conference/blob/main/2%EC%9B%94%EC%B0%A8/retrofit%20%ED%86%B5%EC%8B%A0.md), [socket 통신](https://github.com/GSM-Conference/Android-Conference/blob/main/2%EC%9B%94%EC%B0%A8/socket%20%ED%86%B5%EC%8B%A0.md)
