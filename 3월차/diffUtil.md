@@ -10,10 +10,12 @@ oldList와 newList 차이를 계산하고 oldList를 newList로 변환하는 업
 diffUtil은 difference algorithm 을 사용하여 하나의 목록을 다른 목록으로 변환하기 위한 최소 업데이트수를 계산한다.
 
 우선 아래와 같이 diffUtil.Callback 을 상속받는 DiffCallback 클래스를 만들고 비교할 대상을 지정해 준다.
+ 
+
 ```Kotlin
 class DiffUtilCallback(
-    private val oldData: List<Any>,
-    private val newData: List<Any>
+    private val oldData: List<Int>,
+    private val newData: List<Int>
     ) : DiffUtil.Callback() {
     override fun areItemsTheSame(oldItemPosition: Int, newItemPosition: Int) : Boolean{
         val oldItem = oldData[oldItemPosition]
@@ -27,13 +29,28 @@ class DiffUtilCallback(
         }
     }
 
-    ㅐverride fun getOldListSize(): Int = oldData.size
+    override fun getOldListSize(): Int = oldData.size
 
     override fun getNewListSize(): Int = newData.size
 
     override fun areContentsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean = oldData[oldItemPosition] == newData[newItemPosition]
 }
 ```
+
+
++ 위처럼 Callback을 상속 받는 것 이외에도 ItemCallback으로 만들어 사용하는 방법이 있다. 이를 이용하면 이런식으로 간단하게 구현이 가능하다.
+```Kotlin
+private val mDiffCallback = object : DiffUtil.ItemCallback<Test>() {
+    override fun areItemTheSame(oldItem: Test, newItem: Test) : Boolean {
+        return oldItem.id == newItem.id
+    }
+
+    override fun areContentsTheSame(oldItem: Test, Test: SleepNight) : Boolean {
+        return oldItem.title == newItem.title
+    }
+}
+```
+
 <br>
 <br>
 <br>
