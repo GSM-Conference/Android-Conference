@@ -3,7 +3,9 @@
 ### CI/CD란??
 ![CI/CD](https://images.velog.io/images/cham/post/0f5c6eb0-9f80-4385-8e4d-5dbe70dd58e2/cicd.png)
 
-1.CI
+Andorid에 CI를 어떻게 적용하는지 알기 전에 기본적인 개념인 CI/CD에 대해서 알아보고 가자!
+
+### 1.CI
 
 CI란, Continuous Integartion의 약자로 지속적인 통합을 의미한다.
 
@@ -40,7 +42,7 @@ CI란, Continuous Integartion의 약자로 지속적인 통합을 의미한다.
 <br>
 <br>
 
-2.CD
+### 2.CD
 
 CD란 Continuous Deploy 또는 Continuous Delivery의 약자로 지속적인 배포를 의미한다.
 
@@ -50,4 +52,99 @@ CD란 Continuous Deploy 또는 Continuous Delivery의 약자로 지속적인 배
 
 ### 요약 
 CI : 빌드와 테스트의 자동화
+
 CD : 배포의 자동화
+
+
+<br>
+<br>
+<br>
+
+## Android CI 적용!
+---
+여러가지 적용 방법이 있지만 그중에 Github를 통해 구성해보겠다.
+
+```md
+1. Github 생성
+2. CI구성 : Action 설정 및 옵션 설정
+```
+
+### 1. Github Repository 생성
+Repository 를 생성한 후 브랜치를 main - release  develop 으로 구성해 준다. release 브랜치에서 merge 되면 CI/CD가 배포되도록 해본다.
+
+![Repository](https://velog.velcdn.com/images/wonsh2000/post/da7dd136-6d15-463b-93d4-812d5f12fc09/image.png)
+
+<br>
+
+### 2. CI 구성 (Github Action 설정)
+상단 탭에 Actions 라는 버튼을 클릭하면 프로젝트별 환경을 제공하고 있다.
+
+workflows/파일명.yml 인 새로운 파일이 생성된다. Android CI를 이용하여 default 환경을 이용하여 빌드를 돌려본다. 물론 실제 환경에서는 Dev, QA, Stage, Prd 환경별로 구성하고 Signing 과 난독화 등 많은 작업들이 추가된다.
+
+```yml
+name: Android CI
+
+on:
+  push:
+    branches: [ release ]
+  pull_request:
+    branches: [ release ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: set up JDK 11
+      uses: actions/setup-java@v3
+      with:
+        java-version: '11'
+        distribution: 'temurin'
+        cache: gradle
+
+    - name: Grant execute permission for gradlew
+      run: chmod +x gradlew
+    - name: Build with Gradle
+      run: ./gradlew build
+```
+
+아래와 같이 빌드가 정상적으로 돌아간 것을 확인 할 수 있다.
+
+![Check](https://velog.velcdn.com/images/wonsh2000/post/5c2ebc8c-ee84-462b-8978-e225eacb36c2/image.png)
+
+<br>
+<br>
+
+### 옵션. Ktlint와 Detekt 추가
+코드의 품질을 높이기 위해 Ktlint와 Detekt도 아래와 같이 추가해준다. 린트와 정적 분석기 이다. 이를 하기 위해서는 프로젝트에 아래와 같이 추가한다,
+
+<br>
+
+> 공식 페이지 : https://ktlint.github.io/
+
+```gradle
+plugins {
+    id("org.jlleitschuh.gradle.ktlint") version Versions.BuildUtil.KtLint
+}
+
+allprojects {
+    ...
+    apply {
+        plugin("org.jlleitschuh.gradle.ktlint")
+    }
+}
+```
+
+프로젝트에 위처럼 추가헀다면 다시 yml 파일로 돌아와서 아래처럼 추가한다.
+
+```yml
+- name: Run ktlint
+  run: ./gradlew ktlintCheck
+
+- name: Run detekt
+  run: ./gradlew detekt
+```
+
+
