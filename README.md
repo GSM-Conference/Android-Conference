@@ -23,3 +23,4 @@
 #### 4주차: [Android CI](https://github.com/GSM-Conference/Android-Conference/blob/main/3%EC%9B%94%EC%B0%A8/Android%20CI.md), [Android CD](https://github.com/GSM-Conference/Android-Conference/blob/main/3%EC%9B%94%EC%B0%A8/Android%20CD.md)
 ### 4월달
 #### 1주차: [intent](https://github.com/GSM-Conference/Android-Conference/blob/main/4%EC%9B%94%EC%B0%A8/intent.md), [r8/proguard](https://github.com/GSM-Conference/Android-Conference/blob/main/4%EC%9B%94%EC%B0%A8/r8%2Cproguard.md)
+#### 2주차: [fragment](https://github.com/GSM-Conference/Android-Conference/blob/main/2023/4%EC%9B%94%EC%B0%A8/fragment.md), [jetpack navigation](https://github.com/GSM-Conference/Android-Conference/blob/main/2023/4%EC%9B%94%EC%B0%A8/jetpack%20navigation.md)
