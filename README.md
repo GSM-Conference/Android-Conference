@@ -21,3 +21,5 @@
 #### 2주차: [위젯](https://github.com/GSM-Conference/Android-Conference/blob/main/3%EC%9B%94%EC%B0%A8/%EC%9C%84%EC%A0%AF.md), [diffUtil](https://github.com/GSM-Conference/Android-Conference/blob/main/3%EC%9B%94%EC%B0%A8/diffUtil.md)
 #### 3주차: [SharedPreferences](https://github.com/GSM-Conference/Android-Conference/blob/main/3%EC%9B%94%EC%B0%A8/SharedPreferences.md), [Room](https://github.com/GSM-Conference/Android-Conference/blob/main/3%EC%9B%94%EC%B0%A8/Room.md)
 #### 4주차: [Android CI](https://github.com/GSM-Conference/Android-Conference/blob/main/3%EC%9B%94%EC%B0%A8/Android%20CI.md), [Android CD](https://github.com/GSM-Conference/Android-Conference/blob/main/3%EC%9B%94%EC%B0%A8/Android%20CD.md)
+### 4월달
+#### 1주차: [intent](https://github.com/GSM-Conference/Android-Conference/blob/main/4%EC%9B%94%EC%B0%A8/intent.md), [r8/proguard](https://github.com/GSM-Conference/Android-Conference/blob/main/4%EC%9B%94%EC%B0%A8/r8%2Cproguard.md)
