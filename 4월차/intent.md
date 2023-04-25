@@ -5,7 +5,7 @@ Component를 실행하기 위해 시스템에 넘기는 정보를 Intent 라고 
 
 안드로이드는 Component 기반의 구조이고 이때 Intent에 의해 내부적으로 개발자가 작성한 Activity 같은 클래스들이 아래와 같이 동작하게 된다.
 
-![Inten_동작과정](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fd6IrCs%2FbtqvXvVX8Gj%2F3zQfYcFASWlxRQcKdVuLWK%2Fimg.png)
+![Inten_동작과정](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fd6IrCs%2FbtqvXvVX8Gj%2F3zQfYcFASWlxRQcKdVuLWK%2Fimg.png) 
 
 이때 위의 각각이 Class이지만 각 Class가 상호결합 하지 않는 상태로 실행된다. 그래서 이를 Component 라고 한다.
 
