@@ -24,3 +24,4 @@
 ### 4월달
 #### 1주차: [intent](https://github.com/GSM-Conference/Android-Conference/blob/main/4%EC%9B%94%EC%B0%A8/intent.md), [r8/proguard](https://github.com/GSM-Conference/Android-Conference/blob/main/4%EC%9B%94%EC%B0%A8/r8%2Cproguard.md)
 #### 2주차: [fragment](https://github.com/GSM-Conference/Android-Conference/blob/main/2023/4%EC%9B%94%EC%B0%A8/fragment.md), [jetpack navigation](https://github.com/GSM-Conference/Android-Conference/blob/main/2023/4%EC%9B%94%EC%B0%A8/jetpack%20navigation.md)
+#### 3주차: [Dialog](https://github.com/GSM-Conference/Android-Conference/blob/main/2023/4%EC%9B%94%EC%B0%A8/dialog.md), [Paging](https://github.com/GSM-Conference/Android-Conference/blob/main/2023/4%EC%9B%94%EC%B0%A8/paging.md)
