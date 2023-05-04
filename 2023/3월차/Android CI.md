@@ -3,7 +3,7 @@
 ### CI/CD란??
 ![CI/CD](https://images.velog.io/images/cham/post/0f5c6eb0-9f80-4385-8e4d-5dbe70dd58e2/cicd.png)
 
-Andorid에 CI를 어떻게 적용하는지 알기 전에 기본적인 개념인 CI/CD에 대해서 알아보고 가자!
+Android에 CI를 어떻게 적용하는지 알기 전에 기본적인 개념인 CI/CD에 대해서 알아보고 가자!
 
 ### 1.CI
 
@@ -62,89 +62,29 @@ CD : 배포의 자동화
 
 ## Android CI 적용!
 ---
-여러가지 적용 방법이 있지만 그중에 Github를 통해 구성해보겠다.
-
-```md
-1. Github 생성
-2. CI구성 : Action 설정 및 옵션 설정
-```
-
-### 1. Github Repository 생성
-Repository 를 생성한 후 브랜치를 main - release  develop 으로 구성해 준다. release 브랜치에서 merge 되면 CI/CD가 배포되도록 해본다.
-
-![Repository](https://velog.velcdn.com/images/wonsh2000/post/da7dd136-6d15-463b-93d4-812d5f12fc09/image.png)
+CI/CD 를 도와주는 툴은 여러가지가 있는데 Jenkins, Circle CI, Github Actions 등이 있다. 이 툴들중 무료이면서 가장 쉽고 세팅이 적고 Github Repository 에서 바로 접근할 수 도 있어 Github Actions를 예시로 설명해보겠다.
 
 <br>
 
-### 2. CI 구성 (Github Action 설정)
-상단 탭에 Actions 라는 버튼을 클릭하면 프로젝트별 환경을 제공하고 있다.
+### 시작하기
+Github Actions에 들어가면 Android CI가 바로 뜨진 않는다. 'browse all category' 버튼을 눌러 더 찾거나 아니면 아래 사진처럼 검색을 하면 나온다.
 
-workflows/파일명.yml 인 새로운 파일이 생성된다. Android CI를 이용하여 default 환경을 이용하여 빌드를 돌려본다. 물론 실제 환경에서는 Dev, QA, Stage, Prd 환경별로 구성하고 Signing 과 난독화 등 많은 작업들이 추가된다.
+![Github_Actions_Search](https://cdn.discordapp.com/attachments/1089420730963329074/1094934976094535812/image.png)
 
-```yml
-name: Android CI
+그러면 Repository의 ./github/workflows 폴더에 android.yml 폴더가 생긴다. 여기에 어떤 로직을 짜느냐에 따라 특정 브랜치에 Push or PR 을 했을 때 수행하는 WorkFlow를 만들 수 있다.
 
-on:
-  push:
-    branches: [ release ]
-  pull_request:
-    branches: [ release ]
+Github에서 원격 서버(Ubuntu)를 제공해주고, 그 공간에서 내가 올린 소스코드로 빌드 등을 해주는 원리이다.
 
-jobs:
-  build:
+(public repository에서는 무료이고, private 레포는 매월 2천 시간까지만 무료이고 이후부터는 유료이다.)
 
-    runs-on: ubuntu-latest
+![Github_Repository_WorkFlow](https://cdn.discordapp.com/attachments/1089420730963329074/1094936808900538479/image.png)
 
-    steps:
-    - uses: actions/checkout@v3
-    - name: set up JDK 11
-      uses: actions/setup-java@v3
-      with:
-        java-version: '11'
-        distribution: 'temurin'
-        cache: gradle
+구글링 해본 결과 저런식으로 놔두거나 push와 pull request 의 브랜치를 release로 바꾸는 경우라서 유추해보건데 작업이 열리는?? 실행되는?? 브랜치를 나타나는 것 같길래 난 master에서만 작업을 했기 때문에 그냥 그대로 뒀다
 
-    - name: Grant execute permission for gradlew
-      run: chmod +x gradlew
-    - name: Build with Gradle
-      run: ./gradlew build
-```
-
-아래와 같이 빌드가 정상적으로 돌아간 것을 확인 할 수 있다.
-
-![Check](https://velog.velcdn.com/images/wonsh2000/post/5c2ebc8c-ee84-462b-8978-e225eacb36c2/image.png)
-
-<br>
+그렇게 작업을 하려고 했으나 오류가 떴다..
+![Error]()
 <br>
 
-### 옵션. Ktlint와 Detekt 추가
-코드의 품질을 높이기 위해 Ktlint와 Detekt도 아래와 같이 추가해준다. 린트와 정적 분석기 이다. 이를 하기 위해서는 프로젝트에 아래와 같이 추가한다,
 
-<br>
-
-> 공식 페이지 : https://ktlint.github.io/
-
-```gradle
-plugins {
-    id("org.jlleitschuh.gradle.ktlint") version Versions.BuildUtil.KtLint
-}
-
-allprojects {
-    ...
-    apply {
-        plugin("org.jlleitschuh.gradle.ktlint")
-    }
-}
-```
-
-프로젝트에 위처럼 추가헀다면 다시 yml 파일로 돌아와서 아래처럼 추가한다.
-
-```yml
-- name: Run ktlint
-  run: ./gradlew ktlintCheck
-
-- name: Run detekt
-  run: ./gradlew detekt
-```
-
-
+### 보안 파일 관리
+원격에서 앱을 빌드하려면 한가지 문제가 생길 수 도 있다. 그것은 바로 자신이 **gitignore**로 보이지 않도록 명시한 보안파일들이디. 이것들이 없으면 아마 빌드 에러가 발생할 것인데, 이를 위해 Github에서 제공하는 Secret 기능도 사용하였다.
