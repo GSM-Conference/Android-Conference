@@ -27,3 +27,4 @@
 #### 3주차: [Dialog](https://github.com/GSM-Conference/Android-Conference/blob/main/2023/4%EC%9B%94%EC%B0%A8/dialog.md), [Paging](https://github.com/GSM-Conference/Android-Conference/blob/main/2023/4%EC%9B%94%EC%B0%A8/paging.md)
 ### 5월달
 #### 1주차: [multi module](https://github.com/GSM-Conference/Android-Conference/blob/main/2023/5%EC%9B%94%EC%B0%A8/multi%20module.md), [clean architecture](https://github.com/GSM-Conference/Android-Conference/blob/main/2023/5%EC%9B%94%EC%B0%A8/clean%20architecture.md)
+#### 2주차: [Array vs List](https://github.com/GSM-Conference/Android-Conference/blob/main/2023/5%EC%9B%94%EC%B0%A8/array%20vs%20list.md), [Resource](https://github.com/GSM-Conference/Android-Conference/blob/main/2023/5%EC%9B%94%EC%B0%A8/resource.md)
