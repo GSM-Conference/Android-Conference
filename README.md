@@ -29,3 +29,5 @@
 #### 1주차: [multi module](https://github.com/GSM-Conference/Android-Conference/blob/main/2023/5%EC%9B%94%EC%B0%A8/multi%20module.md), [clean architecture](https://github.com/GSM-Conference/Android-Conference/blob/main/2023/5%EC%9B%94%EC%B0%A8/clean%20architecture.md)
 #### 2주차: [Array vs List](https://github.com/GSM-Conference/Android-Conference/blob/main/2023/5%EC%9B%94%EC%B0%A8/array%20vs%20list.md), [Resource](https://github.com/GSM-Conference/Android-Conference/blob/main/2023/5%EC%9B%94%EC%B0%A8/resource.md)
 #### 3주차: [Viewpager](https://github.com/GSM-Conference/Android-Conference/blob/main/2023/5%EC%9B%94%EC%B0%A8/viewpager.md), [Drag and Drop](https://github.com/GSM-Conference/Android-Conference/blob/main/2023/5%EC%9B%94%EC%B0%A8/drag%20and%20drop.md)
+### 6월달
+#### 1주차: [Glide, Coil](https://github.com/GSM-Conference/Android-Conference/blob/main/2023/6%EC%9B%94%EC%B0%A8/Glide%2C%20Coil.md), [Exo Player](https://github.com/GSM-Conference/Android-Conference/blob/main/2023/6%EC%9B%94%EC%B0%A8/Exo%20Player.md)
