@@ -188,7 +188,7 @@ imageView.load(imageUrl)
 <br>
 
 ### Glide
-모든 이미지를 로딩하고 아래에서 위깢 ㅣ스크롤 2번 한 후에 안정된 상태의 메모리 상태이다. 아주 잠깐 300MB까지 치솟다가 잠잠해졌다.
+모든 이미지를 로딩하고 아래에서 위까지 스크롤 2번 한 후에 안정된 상태의 메모리 상태이다. 아주 잠깐 300MB까지 치솟다가 잠잠해졌다.
 
 ![glide_test](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fcu2QO4%2FbtqSgLQ3cdU%2FBiOKTNK7Vr08H8EIfawLr0%2Fimg.png)
 
@@ -202,3 +202,168 @@ Coil또한 메모리 상태를 관찰해보았다. 그래픽에 사용된 메모
 ![coil_test](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FblHrg1%2FbtqSduhN946%2FP2bKqXSBpM4XFnaSpijY61%2Fimg.png)
 
 ![coil_test1](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FJd8Cf%2FbtqSduotLVp%2FIzncCUqHRhZXtKkyJAbNU1%2Fimg.png)
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+## Glide vs Coil 더 자세하게 메모리 사용량 비교하기
+이미지 로딩 라이브러리인 Glide와 Coil중 OOM을 초래할 수 있는 이미지 사용에 대해 테스트앱을 작성하여 메모리 사용량 관점에서 비교 실험을 진행했다.
+
+![memory_check_example](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*w4zJ5ao_DK9637axwMOH-A.jpeg)
+(빨간점 : 메모리 사용량 최대값 / 노란점 : 메모리 사용량 안정 값)
+
+<br>
+
+### 1번 테스트 (앱 데이터 삭제 상황)
+앱 데이터 삭제 -> 앱 실행 -> 메모리 측정
+
+<br>
+
+### 2번 테스트 (Cold Start 상황)
+앱 프로세스 종료 -> 앱 실행 -> 메모리 측정
+
+<br>
+
+### 3번 테스트 (Warm Start 상황)
+디바이스 뒤로가기로 앱 종료 -> 앱 실행 -> 메모리 측정
+
+<br>
+
+### 1번 테스트 : 기본 Image Load
+별도의 추가 옵션 없이 각 라이브러리의 기본 세팅으로 Image Load 테스트를 진행할 것이다. 단, Glide는 CenterCrop 옵션이 별도의 메소드로 존재하고 Coil은 ImageView의 ScaleType을 판별해 내부적으로 처리되기 때문에 Glide에 CenterCrop 메소드를 적용했다.
+
+![test1_code1](https://miro.medium.com/v2/resize:fit:1178/format:webp/1*2Y_sy7OmlE0Gs1K7pH799Q.png)
+
+Glide Test Code
+
+![test1_code2](https://miro.medium.com/v2/resize:fit:1186/format:webp/1*5_igs0rEKkcHwwPuM45VOg.png)
+
+Coil Test Code
+
+### ImageView에 적용되는 이미지 사이즈 비교
+동일한 원본 크기를 가진 이미지가 Glide, Coil의 Load를 각각 통과해 ImageView.setDrawable로 전달되는 ImageSize는 각각 아래와 같다.
+
+- Glide : 1080 x 403 (View Size와 같음)
+- Coil : 1080 x 1326 (원본 Image Size와 같음)
+
+![test_image_size](https://miro.medium.com/v2/resize:fit:816/format:webp/1*4k6AI40wl7tkO_YXVWZPkQ.png)
+
+Glide Image Size
+
+![test_image_size1](https://miro.medium.com/v2/resize:fit:822/format:webp/1*OaMNYzuRVo6TIBAN9UK_Ag.png)
+
+Coil Image Size
+
+<br>
+<br>
+
+## 1번 테스트에 대한 결과 (앱 데이터 삭제 상황)
+![test_num1_stable](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*BytlLmYPu5y_RNWUOIiBhg.png)
+
+- Glide 안정 상태 메모리 사용량 : 195.45Mb
+- Coil 안정 상태 메모리 사용량 : 192.10Mb
+
+![test_num1_max](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*a325FXJ5bIyWyqsaEYO-3g.png)
+
+- Glide 최고 메모리 사용량 : 223.71Mb
+- Coil 최고 메모리 사용량 : 235.01Mb
+
+<br>
+<br>
+
+### 2번 테스트에 대한 결과 (Cold Start)
+![test_num2_stable](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*1QxS3b7Ayp9zA-guqW1iOw.png)
+
+- Glide 안정 상태 메모리 사용량 : 187.65Mb
+- Coil 안정 상태 메모리 사용량 : 193.83Mb
+
+![test_num2_max](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*K_B7zFepduAFjhdZoEPKew.png)
+
+- Glide 최고 메모리 사용량 : 212.91Mb
+- Coil 최고 메모리 사용량 : 221.74Mb
+
+<br>
+<br>
+
+### 3번 테스트에 대한 결과 (Warm Start)
+![test_num3_stable](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*BxJoCkJz9HbEUG5c7DlL6g.png)
+
+- Glide 안정 상태 메모리 사용량 : 122.42Mb
+- Coil 안정 상태 메모리 사용량 : 142.61Mb
+
+![test_num3_max](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*BxJoCkJz9HbEUG5c7DlL6g.png)
+
+3번 테스트는 앱 실행 시 바로 안정 상태로 진입햇 ㅓ최고 메모리 사용량을 따로 측정하지 못한다.
+
+<br>
+<br>
+
+### 2번 테스트 : RoundCornersTransform 적용
+Glide에서는 CenterCrop이 별도의 transformation으로 적용되지만, coil에서는 ImageView의 ScaleType을 통해 동작하기 때문에 차이점이 존재한다. 이 때문에 두 라이브러리 모두 존재하는 RoundCornersTransform을 적용해 ImageTransform 로직이 동작하는 환경을 만들어 테스트를 진행했다.
+
+![test2_code](https://miro.medium.com/v2/resize:fit:1238/format:webp/1*_5GL4qgkDL-Gg_oxlFEaGQ.png)
+
+Glide Test Code
+
+![test2_code1](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*Il8BgR1nAyi8uIGlzXTzqA.png)
+
+Coil Test Code
+
+<br>
+<br>
+
+### ImageView에 적용되는 이미지 사이즈 비교
+동일한 원본 크기를 가진 이미지가 Glide, Coil의 Load를 각각 통과해 ImageView.setDrawable로 전달되는 ImageSize는 각각 아래와 같다.
+
+- Glide : 1080 x 403 (View Size와 같음)
+- Coil : 1080 x 403 (View Size와 같음)
+
+S20+ 디바이스에서는 Coil도 View Size와 같은 이미지로 Scaling 되지만, 다른 Emulator 기기에서 측정했을 때 Glide는 동일하게 View Size와 같고, Coil은 View Size와 다른 Size로 Scaling 되었다.
+
+![iamge_size_cjelca](https://miro.medium.com/v2/resize:fit:820/format:webp/1*ybJP9HsURz-VI_ETfqYesA.png)
+
+Glide Image Size
+
+![imamge_size_dska](https://miro.medium.com/v2/resize:fit:830/format:webp/1*Atpne8dSmGuTWfuG_LRtww.png)
+
+Coil Image Size
+
+<br>
+<br>
+
+### 1번 테스트에 대한 결과 (앱 데이터 삭제 상황)
+
+![askdl](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*xLV7ivach1T3GwBKRdaoTA.png)
+
+- Glide 안정 상태 메모리 사용량 : 199.35Mb
+- Coil 안정 상태 메모리 사용량 : 197.81Mb
+
+![sad](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*73QXLdtmE946HFtI4uqTlg.png)
+
+- Glide 최고 메모리 사용량 : 226.29Mb
+- Coil 최고 메모리 사용량 : 226.54Mb
+
+### 2번 테스트에 대한 결과 (Cold Start)
+
+![asd](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*WBZm4zfoJkrvXfdvDLgqJw.png)
+
+- Glide 안정 상태 메모리 사용량 : 192.72Mb
+- Coil 안정 상태 메모리 사용량 : 187.62Mb
+
+![asdasd](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*7Km0TGCAOthFLu5kRih6Jg.png)
+
+- Glide 최고 메모리 사용량 : 218.69Mb
+- Coil 최고 메모리 사용량 : 217.19Mb
+
+### 3번 테스트에 대한 결과 (Warm Start)
+
+![ㅁㅁㄴ](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*l4etQjR02t2J2P5rDMoknA.png)
+
+- Glide 안정 상태 메모리 사용량 : 124.10Mb
+- Coil 안정 상태 메모리 사용량 : 132.012Mb
+
+3번 절차는 앱 실행 시 바로 안정 상태로 진입해서 최고 메모리 사용량은 따로 측정하지 못했다.

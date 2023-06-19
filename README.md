@@ -31,3 +31,4 @@
 #### 3주차: [Viewpager](https://github.com/GSM-Conference/Android-Conference/blob/main/2023/5%EC%9B%94%EC%B0%A8/viewpager.md), [Drag and Drop](https://github.com/GSM-Conference/Android-Conference/blob/main/2023/5%EC%9B%94%EC%B0%A8/drag%20and%20drop.md)
 ### 6월달
 #### 1주차: [Glide, Coil](https://github.com/GSM-Conference/Android-Conference/blob/main/2023/6%EC%9B%94%EC%B0%A8/Glide%2C%20Coil.md), [Exo Player](https://github.com/GSM-Conference/Android-Conference/blob/main/2023/6%EC%9B%94%EC%B0%A8/Exo%20Player.md)
+#### 2주차: [Biometric](https://github.com/GSM-Conference/Android-Conference/blob/main/2023/6%EC%9B%94%EC%B0%A8/Biometric.md)
