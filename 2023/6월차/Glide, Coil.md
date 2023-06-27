@@ -246,7 +246,6 @@ Coil Test Code
 
 ### ImageView에 적용되는 이미지 사이즈 비교
 동일한 원본 크기를 가진 이미지가 Glide, Coil의 Load를 각각 통과해 ImageView.setDrawable로 전달되는 ImageSize는 각각 아래와 같다.
-
 - Glide : 1080 x 403 (View Size와 같음)
 - Coil : 1080 x 1326 (원본 Image Size와 같음)
 
@@ -295,9 +294,8 @@ Coil Image Size
 - Glide 안정 상태 메모리 사용량 : 122.42Mb
 - Coil 안정 상태 메모리 사용량 : 142.61Mb
 
-![test_num3_max](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*BxJoCkJz9HbEUG5c7DlL6g.png)
 
-3번 테스트는 앱 실행 시 바로 안정 상태로 진입햇 ㅓ최고 메모리 사용량을 따로 측정하지 못한다.
+3번 테스트는 앱 실행 시 바로 안정 상태로 진입해서최고 메모리 사용량을 따로 측정하지 못한다.
 
 <br>
 <br>
