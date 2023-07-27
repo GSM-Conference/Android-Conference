@@ -197,3 +197,15 @@ class MainActivity : AppCompatActivity() {
 ![실행화면1](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fdhu5tw%2FbtqRqRertuC%2FNXIl2d0zK9LhU80TCHDQnk%2Fimg.png)
 
 이 사진처럼 기존에 설정한 Header.xml과 Content.xml이 나올것이다!
+
+<br>
+<br>
+
+또한 앱을 본다면 보통 icon과 title이 같이 출력이 되는게 일반적인데 위의 실행화면에서는 title만 출력을 했다. icon을 같이 출력하고 싶다면 아래의 xml 코드처럼 작성하면 된다.
+
+```xml
+ <item
+    android:id="@+id/item_notice"        android:icon="@drawable/ic_notice"             android:title="공지" />
+```
+
+또한 icon과 title사이의 padding을 주고싶다면 item이 있는 NavigationView에 `app:itemIconPadding` 이라는 속성으로 padding 값을 조절해주면 된다.
