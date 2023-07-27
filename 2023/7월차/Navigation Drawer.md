@@ -4,7 +4,7 @@ Navigation Drawer란 쉽게 알려주자면 아래의 사진과 같다
 
 ![navi](https://cdn.discordapp.com/attachments/1089420730963329074/1133929659717931088/image.png)
 
-다들 한번씩 스마트폰 앱을 사용해봤다면 가장 오른쪽의 아이콘이 익숙할 것이다. 보통 저런 아이콘을 가진 View를 Tool bar 라고 하는데 Navigation Drawer를 사용하면 아래와 같이 클릭했을때 새로운 레이아웃이 나올것이다.
+다들 한번씩 스마트폰 앱을 사용해봤다면 가장 오른쪽의 아이콘이 익숙할텐데 것이다. 보통 저런 아이콘을 가진 View를 Tool bar 라고 하는데 Navigation Drawer를 사용하면 아래와 같이 클릭했을때 새로운 레이아웃이 나올것이다.
 
 ![navi1](https://cdn.discordapp.com/attachments/1089420730963329074/1133929699341500496/image.png)
 
