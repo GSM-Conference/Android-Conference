@@ -24,3 +24,6 @@
 #### 1주차: [Glide, Coil](https://github.com/GSM-Conference/Android-Conference/blob/main/2023/6%EC%9B%94%EC%B0%A8/Glide%2C%20Coil.md), [Exo Player](https://github.com/GSM-Conference/Android-Conference/blob/main/2023/6%EC%9B%94%EC%B0%A8/Exo%20Player.md)
 #### 2주차: [Biometric](https://github.com/GSM-Conference/Android-Conference/blob/main/2023/6%EC%9B%94%EC%B0%A8/Biometric.md)
 #### 3주차: [Modifier](https://github.com/GSM-Conference/Android-Conference/blob/main/2023/6%EC%9B%94%EC%B0%A8/Modifier.md), [LazyList](https://github.com/GSM-Conference/Android-Conference/blob/main/2023/6%EC%9B%94%EC%B0%A8/LazyList.md)
+### 7월달
+#### 1주차:
+#### 2주차: [ComposeTheme](https://github.com/GSM-Conference/Android-Conference/blob/main/2023/7%EC%9B%94%EC%B0%A8/ComposeTheme.md), [Ktor](https://github.com/GSM-Conference/Android-Conference/blob/main/2023/7%EC%9B%94%EC%B0%A8/Ktor.md)
