@@ -29,3 +29,4 @@
 #### 2주차: [ComposeTheme](https://github.com/GSM-Conference/Android-Conference/blob/main/2023/7%EC%9B%94%EC%B0%A8/ComposeTheme.md), [Ktor](https://github.com/GSM-Conference/Android-Conference/blob/main/2023/7%EC%9B%94%EC%B0%A8/Ktor.md)
 ### 8월달
 #### 1주차: [Animation](https://github.com/GSM-Conference/Android-Conference/blob/main/2023/8%EC%9B%94%EC%B0%A8/Animation.md), [DynamicIcon](https://github.com/GSM-Conference/Android-Conference/blob/main/2023/8%EC%9B%94%EC%B0%A8/DynamicIcon.md)
+#### 2주차: [PIP](https://github.com/GSM-Conference/Android-Conference/blob/main/2023/8%EC%9B%94%EC%B0%A8/PIP.md), [ShortCut](https://github.com/GSM-Conference/Android-Conference/blob/main/2023/8%EC%9B%94%EC%B0%A8/ShortCut.md)
