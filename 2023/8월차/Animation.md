@@ -16,7 +16,6 @@ Android는 이렇게 애니메이션 적용을 위해 Animator라는 클래스�
 
 <br>
 
-
 ---
 
 ### 1. 간단한 애니메이션에서는 ViewPropertyAnimator를 이용하는것이 좋다.
