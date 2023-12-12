@@ -99,6 +99,24 @@ Google Play 스토어 앱은 자신들의 앱에서 market:// 사용 중이었�
 
 URL Scheme 방식은 정말 간단한 게 DeepLink를 추가하는 방법이었지만, 간단한 만큼 다른 앱들도 동일하게 추가할 수 있다는 단점이 생겨버린 방식이였다.
 
+<br>
+<br>
+<br>
 
+## AppLink
+---
+위의 URL Scheme의 한계점을 해결하기 위해 나온 AppLink에 대해서 알아보겠다.
 
- 
+AppLink 2015년도에 Google/IO에서 발표한 기술이다. 바로 이 AppLink가 Scheme값이 중복되는 문제를 해결했다.
+
+App Link는 http, https로 Scheme를 제한해서 URL Scheme 자체가 하나의 도메인을 나타나게끔 변경했는데 그로 인해 URL Scheme에서 자유롭게 정의했던 market:// 이나 Line:// 형식은 사용할 수 없다.
+
+예를 들어 스마트폰 브라우저 앱 주소창에 http://naver.com 을 입력하면 네이버 앱이 바로 오픈되어 사용할 수 있게 하는 것이 AppLink라고 보면 편할 것 이다. 안드로이드에서는 Manifest 파일에서
+
+![AppLink](https://help.dfinery.io/hc/article_attachments/360052990633/mceclip0.png)
+
+이렇게 도메인을 등록 가능하다.
+
+하지만 안타깝게도 앱링크가 아직까지는 완전하지 않다. 모든 앱에서 앱링크 오픈을 지원하는 것이 아니기 때문이다.
+
+앱링크는 구글에서 만든 앱에서만 동작하고, 구글 이외에 앱에서는 정상적으로 동작하지 않습니다.
